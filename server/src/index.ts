@@ -1,5 +1,6 @@
 import { Post } from './entities/Post'
 
+//	convert to typeORM
 const init = async () => {
   const orm = await MikroORM.init(microConfig)
 
