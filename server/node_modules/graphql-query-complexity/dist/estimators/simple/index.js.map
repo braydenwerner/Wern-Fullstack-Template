@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/estimators/simple/index.ts"],"names":[],"mappings":";;AAEA,mBAAyB,OAAsC;IAC7D,MAAM,iBAAiB,GAAG,OAAO,IAAI,OAAO,OAAO,CAAC,iBAAiB,KAAK,QAAQ,CAAC,CAAC,CAAC,OAAO,CAAC,iBAAiB,CAAC,CAAC,CAAC,CAAC,CAAC;IACnH,OAAO,CAAC,IAA6B,EAAE,EAAE;QACvC,OAAO,iBAAiB,GAAG,IAAI,CAAC,eAAe,CAAC;IAClD,CAAC,CAAC;AACJ,CAAC;AALD,4BAKC"}

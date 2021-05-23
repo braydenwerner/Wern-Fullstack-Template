@@ -1,0 +1,42 @@
+import { DocumentNode, GraphQLError } from 'graphql';
+import { RequestAgent } from 'apollo-server-env';
+import { Logger, GraphQLRequestContextDidResolveOperation, GraphQLRequestContextDidEncounterErrors } from 'apollo-server-types';
+import { ApolloServerPluginUsageReportingOptions, VariableValueOptions, SendValuesBaseOptions, GenerateClientInfo } from './options';
+import { ApolloServerPlugin } from 'apollo-server-plugin-base';
+export interface EngineReportingOptions<TContext> {
+    apiKey?: string;
+    calculateSignature?: (ast: DocumentNode, operationName: string) => string;
+    reportIntervalMs?: number;
+    maxUncompressedReportSize?: number;
+    endpointUrl?: string;
+    tracesEndpointUrl?: string;
+    debugPrintReports?: boolean;
+    requestAgent?: RequestAgent | false;
+    maxAttempts?: number;
+    minimumRetryDelayMs?: number;
+    reportErrorFunction?: (err: Error) => void;
+    sendVariableValues?: VariableValueOptions;
+    reportTiming?: ReportTimingOptions<TContext>;
+    privateVariables?: Array<String> | boolean;
+    sendHeaders?: SendValuesBaseOptions;
+    privateHeaders?: Array<String> | boolean;
+    handleSignals?: boolean;
+    sendReportsImmediately?: boolean;
+    maskErrorDetails?: boolean;
+    rewriteError?: (err: GraphQLError) => GraphQLError | null;
+    schemaTag?: string;
+    graphVariant?: string;
+    generateClientInfo?: GenerateClientInfo<TContext>;
+    reportSchema?: boolean;
+    overrideReportedSchema?: string;
+    schemaReportingInitialDelayMaxMs?: number;
+    schemaReportingUrl?: string;
+    logger?: Logger;
+    experimental_schemaReporting?: boolean;
+    experimental_overrideReportedSchema?: string;
+    experimental_schemaReportingInitialDelayMaxMs?: number;
+}
+export declare type ReportTimingOptions<TContext> = ((request: GraphQLRequestContextDidResolveOperation<TContext> | GraphQLRequestContextDidEncounterErrors<TContext>) => Promise<boolean>) | boolean;
+export declare function ApolloServerPluginUsageReportingFromLegacyOptions<TContext>(options?: EngineReportingOptions<TContext>): ApolloServerPlugin;
+export declare function legacyOptionsToPluginOptions(engine: EngineReportingOptions<any>): ApolloServerPluginUsageReportingOptions<any>;
+//# sourceMappingURL=legacyOptions.d.ts.map
