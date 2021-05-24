@@ -13,8 +13,8 @@ import { getConnection } from 'typeorm'
 import * as argon2 from 'argon2'
 
 import { MyContext } from '../types'
-import { validateRegister } from 'src/utils/validateRegister'
-import { User } from '../entities/User'
+import { validateRegister } from '../utils/validateRegister'
+import { User } from '../entities/index'
 import { UserInput } from './userInput'
 
 @ObjectType()

@@ -7,8 +7,8 @@ import { ApolloServer } from 'apollo-server-express'
 import { buildSchema } from 'type-graphql'
 import { createConnection } from 'typeorm'
 import { __prod__ } from './config'
-import { HelloResolver } from './resolvers/hello'
 import { User } from './entities/User'
+import { UserResolver } from './resolvers/index'
 
 const main = async () => {
   console.log(process.env.DATABASE_URL)
@@ -33,7 +33,7 @@ const main = async () => {
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [HelloResolver],
+      resolvers: [UserResolver],
       validate: false,
     }),
     context: ({ req, res }) => ({
