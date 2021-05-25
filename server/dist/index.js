@@ -19,15 +19,13 @@ const cors_1 = __importDefault(require("cors"));
 const apollo_server_express_1 = require("apollo-server-express");
 const type_graphql_1 = require("type-graphql");
 const typeorm_1 = require("typeorm");
-const hello_1 = require("./resolvers/hello");
 const User_1 = require("./entities/User");
+const index_1 = require("./resolvers/index");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(process.env.DATABASE_URL);
     yield typeorm_1.createConnection({
         type: 'postgres',
-        database: 'TypeScript-GraphQL-Template',
-        username: 'postgres',
-        password: 'postgres',
+        url: process.env.DATABASE_URL,
         logging: true,
         synchronize: true,
         entities: [User_1.User],
@@ -40,7 +38,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     }));
     const apolloServer = new apollo_server_express_1.ApolloServer({
         schema: yield type_graphql_1.buildSchema({
-            resolvers: [hello_1.HelloResolver],
+            resolvers: [index_1.UserResolver],
             validate: false,
         }),
         context: ({ req, res }) => ({
@@ -51,9 +49,10 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     apolloServer.applyMiddleware({
         app,
         cors: false,
+        path: '/',
     });
     app.listen(parseInt(process.env.PORT), () => {
-        console.log('server started on localhost:4000');
+        console.log(`server started on localhost:${process.env.PORT}`);
     });
 });
 main().catch((err) => {

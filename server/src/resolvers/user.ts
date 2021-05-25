@@ -3,7 +3,7 @@ import {
   Mutation,
   Arg,
   Field,
-  Ctx,
+  // Ctx,
   ObjectType,
   Query,
   // FieldResolver,
@@ -12,7 +12,7 @@ import {
 import { getConnection } from 'typeorm'
 import * as argon2 from 'argon2'
 
-import { MyContext } from '../types'
+// import { MyContext } from '../types'
 import { validateRegister } from '../utils/validateRegister'
 import { User } from '../entities/index'
 import { UserInput } from './userInput'
@@ -37,15 +37,20 @@ class UserResponse {
 
 @Resolver(User)
 export class UserResolver {
-  @Query(() => User)
-  user(@Arg('id') id: string, @Ctx() ctx: MyContext) {
-    console.log('testContext: ', ctx.testContext)
-    return User.findOne({ where: { id } })
+  @Query(() => User, { nullable: true })
+  user(@Arg('id') id: string) {
+    const user = User.findOne({ where: { id } })
+    if (!user) return null
+
+    return user
   }
 
-  @Query(() => User, { nullable: true })
+  @Query(() => [User], { nullable: true })
   users() {
-    return User.find()
+    const users = User.find()
+    if (!users) return null
+
+    return users
   }
 
   @Mutation(() => UserResponse)
