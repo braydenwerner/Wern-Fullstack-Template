@@ -1,8 +1,16 @@
-import { useGetUserQuery } from '../generated/graphql'
+import { /*useGetUserQuery*/ useGetUsersQuery } from '../generated/graphql'
+import { UserCard } from '../components/modules/index'
 
 const Home: React.FC = () => {
-  const [, getUser] = useGetUserQuery({ variables: { id: '1' } })
+  const [users] = useGetUsersQuery()
+  // const [user] = useGetUserQuery({ variables: { id: '1' } })
 
-  return <div>Hello</div>
+  return (
+    <>
+      {users.data?.users?.map((user, i) => {
+        return <UserCard key={i} user={user} />
+      })}
+    </>
+  )
 }
 export default Home
