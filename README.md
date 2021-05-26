@@ -4,9 +4,7 @@
 │   └── src
 │       ├── components
 │       │   ├── elements
-│       │   │   └── Wrapper
 │       │   └── modules
-│       │       └── UserCard
 │       ├── config
 │       ├── generated
 │       ├── graphql
@@ -32,5 +30,5 @@
         ├── resolvers
         └── utils
 
-31 directories
+29 directories
 ```
