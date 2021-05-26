@@ -5,6 +5,20 @@
 <li>A create user graphql mutation with password encryption</li>
 <br></br>
 
+<h3>Uses the following technologies:</h3>
+<li>React</li>
+<li>Next.js</li>
+<li>MaterialUI</li>
+<li>Styled-Components</li>
+<li>TypeGraphQL</li>
+<li>URQL</li>
+<li>ApolloServer(express)</li>
+<li>TypeORM</li>
+<li>PostgresSQL</li>
+<li>Node.js</li>
+<li>TypeScript</li>
+<br></br>
+
 ```bash
 ├── client
 │   └── src
