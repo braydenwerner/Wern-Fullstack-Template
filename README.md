@@ -29,6 +29,4 @@
         ├── migrations
         ├── resolvers
         └── utils
-
-29 directories
 ```
