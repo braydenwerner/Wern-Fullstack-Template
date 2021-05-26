@@ -6,7 +6,6 @@
 <br></br>
 
 ```bash
-.
 ├── client
 │   └── src
 │       ├── components
