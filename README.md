@@ -21,10 +21,13 @@
 
 <h3>Running locally:</h3>
 <h3><b>Make sure to have a postgres database running on localhost. Specify the port # and the database name in server/.env</b></h3>
+<h3>Example:</h3>
+
 ```
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/test
 PORT=4000
 ```
+
 <br>
 
 ```
