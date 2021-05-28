@@ -73,3 +73,7 @@ $ npm run build2
         ├── resolvers
         └── utils
 ```
+
+<h3>Hosting:</h3>
+<h3>Client</b>: Hosted with vercel</h3>
+<h3>Server: Hosted with Heroku using PostgreSQL plugin</h3>

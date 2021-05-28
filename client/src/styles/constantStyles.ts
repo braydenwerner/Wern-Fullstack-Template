@@ -13,4 +13,14 @@ export const StyledGridContainer = styled(Grid)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+`
+
+export const StyledHeaderText = styled.div`
+  font-size: 20px;
+`
+
+export const StyledSubText = styled.div`
+  font-size: 15px;
+  color: ${(props) => props.theme.subText};
 `

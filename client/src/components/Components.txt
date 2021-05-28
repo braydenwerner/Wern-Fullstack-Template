@@ -1,0 +1,4 @@
+I like to break my components up into elements and modules. 
+
+An element is an invidual component that may be used in multiple places in the app. Ex: A button
+A module is a larger component generally consists of several elements. Ex: A navbar containing button components

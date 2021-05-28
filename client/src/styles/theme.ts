@@ -2,24 +2,18 @@ export type ThemeType = typeof theme['light']
 
 const theme = {
   light: {
-    background: '#0A162B',
-    secondary: '#1E2328',
-    secondaryDark: '#0d0d0d',
+    background: '#ACDDDE',
+    secondary: '#CAF1DE',
+    secondaryDark: '#E1F8DC',
     primaryText: 'black',
-    contrastBackground: '#cc3399',
-    contrastText: '#EAEAEA',
-    inputBackground: '#010A13',
-    inputBorder: '#3E3501',
+    subText: 'gray',
   },
   dark: {
-    background: '#0A162B',
+    background: '#444444',
     secondary: '#1E2328',
-    secondaryDark: '#0d0d0d',
+    secondaryDark: '#878683',
     primaryText: 'white',
-    contrastBackground: '#EAEAEA',
-    contrastText: '#181A1B',
-    inputBackground: '#010A13',
-    inputBorder: '#3E3501',
+    subText: 'gray',
   },
 }
 
