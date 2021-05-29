@@ -6,6 +6,7 @@ import cors from 'cors'
 import { ApolloServer } from 'apollo-server-express'
 import { buildSchema } from 'type-graphql'
 import { createConnection } from 'typeorm'
+
 import { __prod__ } from './config'
 import { User } from './entities/User'
 import { UserResolver } from './resolvers/index'
