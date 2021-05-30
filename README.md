@@ -19,29 +19,6 @@
 <li>TypeScript</li>
 <br>
 
-<h3>Running locally:</h3>
-<h3><b>Make sure to have a postgres database running on localhost. Specify the port # and the database name in server/.env</b></h3>
-<h3>Example:</h3>
-
-```
-DATABASE_URL=postgresql://postgres:postgres@localhost:5432/test
-PORT=4000
-```
-
-<br>
-
-```
-$ git clone https://github.com/braydenwerner/Fullstack-Wern-Boilerplate
-$ cd Fullstack-Wern-Boilerplate
-$ cd client
-$ npm install
-$ npm run dev
-$ cd ../server
-$ npm install
-$ npm run watch
-$ npm run build2
-```
-
 ```bash
 ├── client
 │   └── src

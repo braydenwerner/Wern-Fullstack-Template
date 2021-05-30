@@ -1,30 +1,25 @@
-import {
-  createClient,
-  dedupExchange,
-  cacheExchange,
-  fetchExchange,
-  ssrExchange,
-} from '@urql/core'
+import { dedupExchange, cacheExchange, fetchExchange } from '@urql/core'
 
 import { serverURL } from '../config/config'
-import { isServer } from './isServer'
+// import { isServer } from './isServer'
 
 export const createUrqlClient = (ssrExchange: any, ctx: any) => {
-  let cookie = ''
-  if (isServer()) {
-    cookie = ctx?.req?.headers?.cookie
-  }
+  //  uncomment if necessary to send cookie to the server. Useful for authentification
+  // let cookie = ''
+  // if (isServer()) {
+  //   cookie = ctx?.req?.headers?.cookie
+  // }
 
   return {
     url: serverURL,
-    //  this will send a cookie to the server
     fetchOptions: {
       credentials: 'include' as const,
-      headers: cookie
-        ? {
-            cookie,
-          }
-        : undefined,
+      //  this will send a cookie to the server
+      // headers: cookie
+      //   ? {
+      //       cookie,
+      //     }
+      //   : undefined,
     },
     exchanges: [
       dedupExchange,
