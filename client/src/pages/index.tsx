@@ -24,7 +24,7 @@ const Home: React.FC = () => {
     <>
       <ThemeToggle />
       {data &&
-        data.users!.map((user, i: number) => {
+        data.users?.map((user, i: number) => {
           return (
             <CenterContainer key={i}>
               <StyledGridContainer>
