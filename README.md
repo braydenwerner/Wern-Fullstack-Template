@@ -1,8 +1,8 @@
 <h1>Wern Fullstack Template</h1>
 <h3>Features Include:</h3>
-<li>Light/dark theme support</li>
 <li>Server-side rendered data from postgres</li>
 <li>A create user graphql mutation with password encryption</li>
+<li>Light/dark theme support</li>
 <br>
 
 <h3>Uses the following technologies:</h3>
