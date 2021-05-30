@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 require("dotenv-safe/config");
 const express_1 = __importDefault(require("express"));
-const path_1 = __importDefault(require("path"));
 const cors_1 = __importDefault(require("cors"));
 const apollo_server_express_1 = require("apollo-server-express");
 const type_graphql_1 = require("type-graphql");
@@ -28,8 +27,9 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         type: 'postgres',
         url: process.env.DATABASE_URL,
         logging: true,
-        migrations: [path_1.default.join(__dirname, './migrations/*')],
+        synchronize: true,
         entities: [index_1.UserAccount],
+        migrations: ['dist/migrations/*.js'],
         ssl: {
             rejectUnauthorized: false,
         },

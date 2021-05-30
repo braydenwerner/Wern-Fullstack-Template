@@ -149,4 +149,4 @@ UserResolver = __decorate([
     type_graphql_1.Resolver(index_1.UserAccount)
 ], UserResolver);
 exports.UserResolver = UserResolver;
-//# sourceMappingURL=user.js.map
+//# sourceMappingURL=UserAccount.js.map

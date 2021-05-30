@@ -19,8 +19,8 @@ const main = async () => {
     logging: true,
     //  do not want synchronize true in production, possiblility of losing data
     synchronize: true,
-    migrations: [path.join(__dirname, './migrations/*')],
     entities: [UserAccount],
+    migrations: [path.join(__dirname, './migrations/*')],
     //  need this to use postgres heroku plugin
     ssl: {
       rejectUnauthorized: false,
