@@ -14,7 +14,7 @@ import * as argon2 from 'argon2'
 
 // import { MyContext } from '../types'
 import { validateRegister } from '../utils/validateRegister'
-import { User } from '../entities/index'
+import { UserAccount } from '../entities/index'
 import { UserInput } from './userInput'
 
 @ObjectType()
@@ -31,24 +31,24 @@ class UserResponse {
   @Field(() => [FieldError], { nullable: true })
   errors?: FieldError[]
 
-  @Field(() => User, { nullable: true })
-  user?: User
+  @Field(() => UserAccount, { nullable: true })
+  user?: UserAccount
 }
 
-@Resolver(User)
+@Resolver(UserAccount)
 export class UserResolver {
-  @Query(() => User, { nullable: true })
+  @Query(() => UserAccount, { nullable: true })
   user(@Arg('id') id: string) {
-    const user = User.findOne({ where: { id } })
+    const user = UserAccount.findOne({ where: { id } })
     if (!user) return null
 
     return user
   }
 
-  @Query(() => [User], { nullable: true })
+  @Query(() => [UserAccount], { nullable: true })
   users() {
     console.log('users query reached')
-    const users = User.find()
+    const users = UserAccount.find()
     if (!users) return null
 
     return users
@@ -67,7 +67,7 @@ export class UserResolver {
       const result = await getConnection()
         .createQueryBuilder()
         .insert()
-        .into(User)
+        .into(UserAccount)
         .values({
           username: options.username,
           email: options.email,

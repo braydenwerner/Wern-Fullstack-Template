@@ -67,21 +67,22 @@ __decorate([
     __metadata("design:type", Array)
 ], UserResponse.prototype, "errors", void 0);
 __decorate([
-    type_graphql_1.Field(() => index_1.User, { nullable: true }),
-    __metadata("design:type", index_1.User)
+    type_graphql_1.Field(() => index_1.UserAccount, { nullable: true }),
+    __metadata("design:type", index_1.UserAccount)
 ], UserResponse.prototype, "user", void 0);
 UserResponse = __decorate([
     type_graphql_1.ObjectType()
 ], UserResponse);
 let UserResolver = class UserResolver {
     user(id) {
-        const user = index_1.User.findOne({ where: { id } });
+        const user = index_1.UserAccount.findOne({ where: { id } });
         if (!user)
             return null;
         return user;
     }
     users() {
-        const users = index_1.User.find();
+        console.log('users query reached');
+        const users = index_1.UserAccount.find();
         if (!users)
             return null;
         return users;
@@ -98,7 +99,7 @@ let UserResolver = class UserResolver {
                 const result = yield typeorm_1.getConnection()
                     .createQueryBuilder()
                     .insert()
-                    .into(index_1.User)
+                    .into(index_1.UserAccount)
                     .values({
                     username: options.username,
                     email: options.email,
@@ -125,14 +126,14 @@ let UserResolver = class UserResolver {
     }
 };
 __decorate([
-    type_graphql_1.Query(() => index_1.User, { nullable: true }),
+    type_graphql_1.Query(() => index_1.UserAccount, { nullable: true }),
     __param(0, type_graphql_1.Arg('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], UserResolver.prototype, "user", null);
 __decorate([
-    type_graphql_1.Query(() => [index_1.User], { nullable: true }),
+    type_graphql_1.Query(() => [index_1.UserAccount], { nullable: true }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
@@ -145,7 +146,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserResolver.prototype, "createUser", null);
 UserResolver = __decorate([
-    type_graphql_1.Resolver(index_1.User)
+    type_graphql_1.Resolver(index_1.UserAccount)
 ], UserResolver);
 exports.UserResolver = UserResolver;
 //# sourceMappingURL=user.js.map

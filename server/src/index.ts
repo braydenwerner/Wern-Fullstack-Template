@@ -8,7 +8,7 @@ import { buildSchema } from 'type-graphql'
 import { createConnection } from 'typeorm'
 
 import { __prod__ } from './config'
-import { User } from './entities/User'
+import { UserAccount } from './entities/index'
 import { UserResolver } from './resolvers/index'
 
 const main = async () => {
@@ -18,9 +18,9 @@ const main = async () => {
     url: process.env.DATABASE_URL,
     logging: true,
     //  do not want synchronize true in production, possiblility of losing data
-    // synchronize: true,
+    synchronize: true,
     migrations: [path.join(__dirname, './migrations/*')],
-    entities: [User],
+    entities: [UserAccount],
     //  need this to use postgres heroku plugin
     ssl: {
       rejectUnauthorized: false,

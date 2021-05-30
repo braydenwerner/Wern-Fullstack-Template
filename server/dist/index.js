@@ -20,8 +20,8 @@ const cors_1 = __importDefault(require("cors"));
 const apollo_server_express_1 = require("apollo-server-express");
 const type_graphql_1 = require("type-graphql");
 const typeorm_1 = require("typeorm");
-const User_1 = require("./entities/User");
-const index_1 = require("./resolvers/index");
+const index_1 = require("./entities/index");
+const index_2 = require("./resolvers/index");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(process.env.DATABASE_URL);
     yield typeorm_1.createConnection({
@@ -29,7 +29,10 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         url: process.env.DATABASE_URL,
         logging: true,
         migrations: [path_1.default.join(__dirname, './migrations/*')],
-        entities: [User_1.User],
+        entities: [index_1.UserAccount],
+        ssl: {
+            rejectUnauthorized: false,
+        },
     });
     const app = express_1.default();
     app.set('trust proxy', 1);
@@ -39,7 +42,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     }));
     const apolloServer = new apollo_server_express_1.ApolloServer({
         schema: yield type_graphql_1.buildSchema({
-            resolvers: [index_1.UserResolver],
+            resolvers: [index_2.UserResolver],
             validate: false,
         }),
         context: ({ req, res }) => ({
