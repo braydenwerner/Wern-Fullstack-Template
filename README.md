@@ -47,6 +47,7 @@ $ npm run build2
 │   └── src
 │       ├── components
 │       │   ├── elements
+│       │   │   └── ThemeToggle
 │       │   └── modules
 │       ├── config
 │       ├── generated
@@ -59,11 +60,14 @@ $ npm run build2
 │       │   └── api
 │       ├── providers
 │       ├── public
+│       │   ├── fonts
+│       │   └── images
 │       ├── styles
 │       └── util
 └── server
     ├── dist
     │   ├── entities
+    │   ├── middleware
     │   ├── resolvers
     │   └── utils
     └── src

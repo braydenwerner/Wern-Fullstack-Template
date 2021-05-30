@@ -1,0 +1,36 @@
+.
+├── client
+│   └── src
+│       ├── components
+│       │   ├── elements
+│       │   │   └── ThemeToggle
+│       │   └── modules
+│       ├── config
+│       ├── generated
+│       ├── graphql
+│       │   ├── fragments
+│       │   ├── mutations
+│       │   └── queries
+│       ├── hooks
+│       ├── pages
+│       │   └── api
+│       ├── providers
+│       ├── public
+│       │   ├── fonts
+│       │   └── images
+│       ├── styles
+│       └── util
+└── server
+    ├── dist
+    │   ├── entities
+    │   ├── middleware
+    │   ├── resolvers
+    │   └── utils
+    └── src
+        ├── entities
+        ├── middleware
+        ├── migrations
+        ├── resolvers
+        └── utils
+
+33 directories
