@@ -1,7 +1,7 @@
 import 'reflect-metadata'
 import 'dotenv-safe/config'
 import express from 'express'
-// import path from 'path'
+import path from 'path'
 import cors from 'cors'
 import { ApolloServer } from 'apollo-server-express'
 import { buildSchema } from 'type-graphql'
@@ -17,8 +17,9 @@ const main = async () => {
     type: 'postgres',
     url: process.env.DATABASE_URL,
     logging: true,
-    synchronize: true,
-    //migrations: [path.join(__dirname, './migrations/*')],
+    //  do not want synchronize true in production, possiblility of losing data
+    // synchronize: true,
+    migrations: [path.join(__dirname, './migrations/*')],
     entities: [User],
   })
 

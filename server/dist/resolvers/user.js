@@ -74,8 +74,7 @@ UserResponse = __decorate([
     type_graphql_1.ObjectType()
 ], UserResponse);
 let UserResolver = class UserResolver {
-    user(id, ctx) {
-        console.log('testContext: ', ctx.testContext);
+    user(id) {
         const user = index_1.User.findOne({ where: { id } });
         if (!user)
             return null;
@@ -83,7 +82,6 @@ let UserResolver = class UserResolver {
     }
     users() {
         const users = index_1.User.find();
-        console.log(users);
         if (!users)
             return null;
         return users;
@@ -128,9 +126,9 @@ let UserResolver = class UserResolver {
 };
 __decorate([
     type_graphql_1.Query(() => index_1.User, { nullable: true }),
-    __param(0, type_graphql_1.Arg('id')), __param(1, type_graphql_1.Ctx()),
+    __param(0, type_graphql_1.Arg('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], UserResolver.prototype, "user", null);
 __decorate([
