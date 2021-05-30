@@ -21,6 +21,10 @@ const main = async () => {
     // synchronize: true,
     migrations: [path.join(__dirname, './migrations/*')],
     entities: [User],
+    //  need this to use postgres heroku plugin
+    ssl: {
+      rejectUnauthorized: false,
+    },
   })
 
   const app = express()
