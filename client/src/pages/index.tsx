@@ -2,7 +2,7 @@ import { withUrqlClient } from 'next-urql'
 import styled from 'styled-components'
 
 import { /*useGetUserQuery*/ useGetUsersQuery } from '../generated/graphql'
-import { ThemeToggle } from '../components/elements/index'
+import { Nav, ThemeToggle } from '../components/elements/index'
 import { createUrqlClient } from '../util/createURQLClient'
 import {
   CenterContainer,
@@ -23,6 +23,7 @@ const Home: React.FC = () => {
   return (
     <>
       <ThemeToggle />
+      <Nav />
       {data &&
         data.users?.map((user, i: number) => {
           return (
@@ -50,6 +51,7 @@ const StyledUserContainer = styled.div<StyledUserContainerProps>`
   height: 100%;
   padding: 15px;
   margin: 20px 0px 20px 0px;
+  border-radius: 10px;
   background-color: ${(props) => props.theme.secondary};
 `
 
