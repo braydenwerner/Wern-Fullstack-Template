@@ -1,7 +1,7 @@
 <h1>Wern Fullstack Template</h1>
 <h3>Features Include:</h3>
 <li>Server-side rendered data from postgres</li>
-<li>A create user graphql mutation with password encryption</li>
+<li>Create user graphql mutation with password encryption</li>
 <li>Get user/user graphql query</li>
 <li>Light/dark theme support and switch component</li>
 <br>
