@@ -13,12 +13,12 @@ import { UserResolver } from './resolvers/index'
 
 const main = async () => {
   console.log(process.env.DATABASE_URL)
-  /*const conn =*/ await createConnection({
+  const conn = await createConnection({
     type: 'postgres',
     url: process.env.DATABASE_URL,
     logging: true,
     //  do not want synchronize true in production, possiblility of losing data
-    synchronize: true,
+    synchronize: false,
     entities: [UserAccount],
     migrations: [path.join(__dirname, './migrations/*')],
     //  need this to use postgres heroku plugin
@@ -26,6 +26,7 @@ const main = async () => {
       rejectUnauthorized: false,
     },
   })
+  await conn.runMigrations()
 
   const app = express()
 
