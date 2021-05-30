@@ -47,7 +47,6 @@ $ npm run build2
 │   └── src
 │       ├── components
 │       │   ├── elements
-│       │   │   └── ThemeToggle
 │       │   └── modules
 │       ├── config
 │       ├── generated

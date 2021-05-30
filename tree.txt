@@ -3,7 +3,6 @@
 │   └── src
 │       ├── components
 │       │   ├── elements
-│       │   │   └── ThemeToggle
 │       │   └── modules
 │       ├── config
 │       ├── generated
@@ -33,4 +32,4 @@
         ├── resolvers
         └── utils
 
-33 directories
+32 directories
