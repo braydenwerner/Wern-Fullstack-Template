@@ -49,6 +49,7 @@ const StyledUserContainer = styled.div<StyledUserContainerProps>`
   width: ${(props) => (props.largerThan500px ? '700px' : '90%')};
   height: 100%;
   padding: 15px;
+  margin: 20px 0px 20px 0px;
   background-color: ${(props) => props.theme.secondary};
 `
 

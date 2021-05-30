@@ -6,7 +6,6 @@ export const CenterContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
 `
 
 export const StyledGridContainer = styled(Grid)`
