@@ -32,8 +32,8 @@ export type MutationCreateUserArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  user?: Maybe<User>;
-  users?: Maybe<Array<User>>;
+  user?: Maybe<UserAccount>;
+  users?: Maybe<Array<UserAccount>>;
 };
 
 
@@ -41,8 +41,8 @@ export type QueryUserArgs = {
   id: Scalars['String'];
 };
 
-export type User = {
-  __typename?: 'User';
+export type UserAccount = {
+  __typename?: 'UserAccount';
   id: Scalars['Float'];
   username: Scalars['String'];
   email: Scalars['String'];
@@ -59,7 +59,7 @@ export type UserInput = {
 export type UserResponse = {
   __typename?: 'UserResponse';
   errors?: Maybe<Array<FieldError>>;
-  user?: Maybe<User>;
+  user?: Maybe<UserAccount>;
 };
 
 export type CreateUserMutationVariables = Exact<{
@@ -77,8 +77,8 @@ export type CreateUserMutation = (
       { __typename?: 'FieldError' }
       & Pick<FieldError, 'field' | 'message'>
     )>>, user?: Maybe<(
-      { __typename?: 'User' }
-      & Pick<User, 'id' | 'username'>
+      { __typename?: 'UserAccount' }
+      & Pick<UserAccount, 'id' | 'username'>
     )> }
   ) }
 );
@@ -91,8 +91,8 @@ export type GetUserQueryVariables = Exact<{
 export type GetUserQuery = (
   { __typename?: 'Query' }
   & { user?: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, 'id' | 'username' | 'email'>
+    { __typename?: 'UserAccount' }
+    & Pick<UserAccount, 'id' | 'username' | 'email'>
   )> }
 );
 
@@ -102,8 +102,8 @@ export type GetUsersQueryVariables = Exact<{ [key: string]: never; }>;
 export type GetUsersQuery = (
   { __typename?: 'Query' }
   & { users?: Maybe<Array<(
-    { __typename?: 'User' }
-    & Pick<User, 'id' | 'username' | 'email'>
+    { __typename?: 'UserAccount' }
+    & Pick<UserAccount, 'id' | 'username' | 'email'>
   )>> }
 );
 
