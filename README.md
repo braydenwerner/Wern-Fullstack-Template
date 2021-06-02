@@ -20,6 +20,29 @@
 <li>TypeScript</li>
 <br>
 
+<h3>Running Locally:</h3>
+<h3>Client:</h3>
+
+```
+npm install
+npm run dev
+```
+
+</pre>
+<h3>Server: (You must have a postgreSQL database running and update the DATABASE_URL in server/.env if you wish to add database functionality)
+</h3>
+<li>A migration to create the users table can be found in server/src/migrations. To run it, uncomment the following line in server/src/index.ts</li>
+
+```
+await conn.runMigrations()
+```
+
+```
+npm install
+npm run build
+npm run dev2
+```
+
 ```bash
 ├── client
 │   └── src
