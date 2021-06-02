@@ -32,7 +32,7 @@ npm install
 npm run dev
 ```
 
-## <b>Server:</b> (You must have a postgreSQL database running and update the DATABASE_URL in server/.env if you wish to add database functionality)
+### <b>Server:</b> (You must have a postgreSQL database running and update the DATABASE_URL in server/.env if you wish to add database functionality)
 
 ### A migration to create the users table can be found in server/src/migrations. To run it, uncomment the following line in server/src/index.ts
 
