@@ -1,38 +1,40 @@
-<h1>Wern Fullstack Template</h1>
-<h2>Features Include:</h2>
-<li>Server-side rendered data from postgres</li>
-<li>Create user graphql mutation with password encryption</li>
-<li>Get users/user graphql query</li>
-<li>Light/dark theme support and switch component</li>
-<br>
+# Wern Fullstack Template
 
-<h2>Uses the following technologies:</h2>
-<li>React</li>
-<li>Next.js</li>
-<li>MaterialUI</li>
-<li>Styled-Components</li>
-<li>TypeGraphQL</li>
-<li>URQL</li>
-<li>ApolloServer(express)</li>
-<li>TypeORM</li>
-<li>PostgresSQL</li>
-<li>Node.js</li>
-<li>TypeScript</li>
-<br>
+## Features Include:
 
-<h2>Running Locally:</h2>
-<h3><b>Client:</b></h3>
+- Server-side rendered data from postgres
+- Create user graphql mutation with password encryption
+- Get users/user graphql query
+- Light/dark theme support and switch component
+  <br>
+
+## Uses the following technologies:
+
+- React
+- Next.js
+- MaterialUI
+- Styled-Components
+- TypeGraphQL
+- URQL
+- ApolloServer(express)
+- TypeORM
+- PostgresSQL
+- Node.js
+- TypeScript
+  <br>
+
+## Running Locally:
+
+### <b>Client:</b>
 
 ```
 npm install
 npm run dev
 ```
 
-</pre>
-<h3><b>Server:</b> (You must have a postgreSQL database running and update the DATABASE_URL in server/.env if you wish to add database functionality)
-</h3>
-<br>
-<h4>A migration to create the users table can be found in server/src/migrations. To run it, uncomment the following line in server/src/index.ts</h4>
+## <b>Server:</b> (You must have a postgreSQL database running and update the DATABASE_URL in server/.env if you wish to add database functionality)
+
+### A migration to create the users table can be found in server/src/migrations. To run it, uncomment the following line in server/src/index.ts
 
 <br>
 
@@ -48,7 +50,7 @@ npm run dev2
 
 <br>
 
-<h2>Folder Structure</h2>
+## Folder Structure
 
 ```bash
 ├── client
@@ -85,6 +87,8 @@ npm run dev2
         └── utils
 ```
 
-<h2>Hosting:</h2>
-<h3>Client</b>: Hosted with vercel</h3>
-<h3>Server: Hosted with Heroku using PostgreSQL plugin</h3>
+## Hosting:
+
+### Client</b>: Hosted with vercel
+
+### Server: Hosted with Heroku using PostgreSQL plugin
