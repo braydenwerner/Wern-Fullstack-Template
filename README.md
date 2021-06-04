@@ -1,4 +1,10 @@
-# Wern Fullstack Template
+<p align="center">
+  <img src="https://i.imgur.com/Rz2joyj.jpg" alt="phone-rig-image" width="95%"/>
+</p>
+
+## This repo is inspired by https://github.com/benawad/lireddit
+
+<br>
 
 ## Features Include:
 
